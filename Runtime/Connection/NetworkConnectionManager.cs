@@ -1235,7 +1235,7 @@ namespace Unity.Netcode
                     if (ConnectedClientIds.Count > 1)
                     {
                         var lowestRTT = ulong.MaxValue;
-                        var unityTransport = NetworkManager.NetworkConfig.NetworkTransport as Transports.UTP.UnityTransport;
+                        var unityTransport = NetworkManager.NetworkConfig.NetworkTransport;
 
                         foreach (var identifier in ConnectedClientIds)
                         {

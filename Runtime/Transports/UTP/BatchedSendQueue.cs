@@ -1,3 +1,4 @@
+#if UTP_TRANSPORT_1_4_ABOVE
 using System;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
@@ -342,3 +343,4 @@ namespace Unity.Netcode.Transports.UTP
         }
     }
 }
+#endif

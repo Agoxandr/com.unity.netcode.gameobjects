@@ -1,3 +1,4 @@
+#if UTP_TRANSPORT_1_4_ABOVE
 using System;
 using System.IO;
 using UnityEngine;
@@ -186,3 +187,4 @@ namespace Unity.Netcode.Transports.UTP
         }
     }
 }
+#endif

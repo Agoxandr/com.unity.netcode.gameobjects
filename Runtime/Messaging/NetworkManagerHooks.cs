@@ -115,11 +115,13 @@ namespace Unity.Netcode
 
         private static string GetTransportErrorMessage(FastBufferReader messageContent, NetworkManager networkManager)
         {
+#if UTP_TRANSPORT_1_4_ABOVE
             if (networkManager.NetworkConfig.NetworkTransport is not UnityTransport)
+#endif
             {
                 return $"NetworkTransport: {networkManager.NetworkConfig.NetworkTransport.GetType()}. Please report this to the maintainer of transport layer.";
             }
-
+#if UTP_TRANSPORT_1_4_ABOVE
             var transportVersion = GetTransportVersion(networkManager);
             return $"{transportVersion}. This should not happen. Please report this to the Netcode for GameObjects team at https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues and include the following data: Message Size: {messageContent.Length}. Message Content: {NetworkMessageManager.ByteArrayToString(messageContent.ToArray(), 0, messageContent.Length)}";
         }
@@ -133,6 +135,7 @@ namespace Unity.Netcode
             }
 
             return transportVersion;
+#endif
         }
 
         public void OnBeforeHandleMessage<T>(ref T message, ref NetworkContext context) where T : INetworkMessage

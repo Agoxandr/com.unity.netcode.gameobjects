@@ -1,8 +1,9 @@
-using Unity.Netcode.Components;
 #if UNITY_UNET_PRESENT
 using Unity.Netcode.Transports.UNET;
 #endif
+#if UTP_TRANSPORT_1_4_ABOVE
 using Unity.Netcode.Transports.UTP;
+#endif
 using UnityEditor;
 using UnityEngine;
 
@@ -38,6 +39,7 @@ namespace Unity.Netcode.Editor
     }
 #endif
 
+#if UTP_TRANSPORT_1_4_ABOVE
     /// <summary>
     /// Internal use. Hides the script field for UnityTransport.
     /// </summary>
@@ -148,6 +150,7 @@ namespace Unity.Netcode.Editor
             }
         }
     }
+#endif
 
 #if COM_UNITY_MODULES_ANIMATION
     /// <summary>

@@ -34,6 +34,11 @@
         },
         {
             "name": "com.unity.transport",
+            "expression": "1.4.0",
+            "define": "UTP_TRANSPORT_1_4_ABOVE"
+        },
+        {
+            "name": "com.unity.transport",
             "expression": "2.0.0-exp",
             "define": "UTP_TRANSPORT_2_0_ABOVE"
         },

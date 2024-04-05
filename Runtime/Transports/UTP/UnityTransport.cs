@@ -1,3 +1,4 @@
+#if UTP_TRANSPORT_1_4_ABOVE
 // NetSim Implementation compilation boilerplate
 // All references to UNITY_MP_TOOLS_NETSIM_IMPLEMENTATION_ENABLED should be defined in the same way,
 // as any discrepancies are likely to result in build failures
@@ -1779,3 +1780,4 @@ namespace Unity.Netcode.Transports.UTP
         }
     }
 }
+#endif
